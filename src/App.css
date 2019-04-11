@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
 body {
-  background-color: whitesmoke;
   font-family: "PT Sans", sans-serif;
 }
 
@@ -21,6 +20,103 @@ body {
 }
 
 #root {
+  background: url("http://api.thumbr.it/whitenoise-361x370.png?background=#d2691eff&noise=626262&density=100&opacity=60");
   height: 100vh;
+}
+
+.border, .calculator {
+  border-radius: 9px 9px 9px 9px;
+  border: 2px solid #000000;
+}
+
+.innerBorder, #display, .numberButton:hover, #divide:hover,
+#multiply:hover,
+#subtract:hover,
+#add:hover,
+#equals:hover {
+  border: 2px solid #000000;
+  -webkit-box-shadow: -5px 25px 24px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: -5px 25px 24px 1px rgba(0, 0, 0, 0.5);
+}
+
+.active, .numberButton:active, #clear:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 5px #666666;
+          box-shadow: 0 5px #666666;
+  background-color: green;
+  color: white;
+}
+
+.calculator {
+  height: 850px;
+  width: 550px;
+  background-color: #d2691e;
+  text-align: center;
+  -webkit-box-shadow: -1px 25px 24px 7px rgba(0, 0, 0, 0.57);
+          box-shadow: -1px 25px 24px 7px rgba(0, 0, 0, 0.57);
+}
+
+#display {
+  height: 150px;
+  width: 507px;
+  margin: 25px 0 15px 0;
+  background-color: whitesmoke;
+}
+
+.numberButton {
+  background-color: white;
+  height: 125px;
+  width: 125px;
+  margin: 1px;
+  font-size: 30px;
+}
+
+.numberButton:hover {
+  background-color: lightgrey;
+}
+
+.numberButton:active {
+  background-color: green;
+}
+
+#divide,
+#multiply,
+#subtract,
+#add,
+#equals {
+  color: white;
+  background-color: orangered;
+}
+
+#divide:hover,
+#multiply:hover,
+#subtract:hover,
+#add:hover,
+#equals:hover {
+  color: black;
+  background-color: lightgrey;
+}
+
+#divide:active,
+#multiply:active,
+#subtract:active,
+#add:active,
+#equals:active {
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+  -webkit-box-shadow: 0 5px #666666;
+          box-shadow: 0 5px #666666;
+  background-color: green;
+  color: white;
+}
+
+#zero {
+  width: 252px;
+}
+
+#clear {
+  width: 379px;
+  background-color: grey;
 }
 /*# sourceMappingURL=App.css.map */

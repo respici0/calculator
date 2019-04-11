@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
 
+$colors: (
+  background: #d2691e
+);
+
 @function colors($color-name) {
   @return map-get($colors, $color-name);
 }
 
 body {
-  background-color: whitesmoke;
   font-family: "PT Sans", sans-serif;
 }
 
@@ -18,5 +21,89 @@ body {
 
 #root {
   @extend .flex;
+  background: url("http://api.thumbr.it/whitenoise-361x370.png?background=#d2691eff&noise=626262&density=100&opacity=60");
   height: 100vh;
+}
+
+.border {
+  border-radius: 9px 9px 9px 9px;
+  border: 2px solid #000000;
+}
+
+.innerBorder {
+  border: 2px solid #000000;
+  box-shadow: -5px 25px 24px 1px rgba(0, 0, 0, 0.5);
+}
+
+.active {
+  transform: translateY(4px);
+  box-shadow: 0 5px #666666;
+  background-color: green;
+  color: white;
+}
+
+.calculator {
+  @extend .border;
+  height: 850px;
+  width: 550px;
+  background-color: colors(background);
+  text-align: center;
+  box-shadow: -1px 25px 24px 7px rgba(0, 0, 0, 0.57);
+}
+
+#display {
+  @extend .innerBorder;
+  height: 150px;
+  width: 507px;
+  margin: 25px 0 15px 0;
+  background-color: whitesmoke;
+}
+
+.numberButton {
+  //@extend .innerBorder;
+  background-color: white;
+  height: 125px;
+  width: 125px;
+  margin: 1px;
+  font-size: 30px;
+  &:hover {
+    @extend .innerBorder;
+    background-color: lightgrey;
+  }
+  &:active {
+    @extend .active;
+    background-color: green;
+  }
+}
+
+#divide,
+#multiply,
+#subtract,
+#add,
+#equals {
+  color: white;
+  background-color: orangered;
+  &:hover {
+    @extend .innerBorder;
+    color: black;
+    background-color: lightgrey;
+  }
+  &:active {
+    transform: translateY(4px);
+    box-shadow: 0 5px #666666;
+    background-color: green;
+    color: white;
+  }
+}
+
+#zero {
+  width: 252px;
+}
+
+#clear {
+  width: 379px;
+  background-color: grey;
+  &:active {
+    @extend .active;
+  }
 }
