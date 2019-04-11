@@ -59,8 +59,11 @@ body {
 #display {
   @extend .innerBorder;
   height: 150px;
+  // display: flex;
+  // flex-direction: row-reverse;
   width: 507px;
   margin: 25px 0 15px 0;
+  padding: 25px;
   background-color: whitesmoke;
 }
 
