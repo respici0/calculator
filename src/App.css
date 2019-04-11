@@ -51,7 +51,7 @@ body {
 .calculator {
   height: 850px;
   width: 550px;
-  background-color: #d2691e;
+  background-color: #c0c0c0;
   text-align: center;
   -webkit-box-shadow: -1px 25px 24px 7px rgba(0, 0, 0, 0.57);
           box-shadow: -1px 25px 24px 7px rgba(0, 0, 0, 0.57);
@@ -117,6 +117,6 @@ body {
 
 #clear {
   width: 379px;
-  background-color: grey;
+  background-color: lightgreen;
 }
 /*# sourceMappingURL=App.css.map */

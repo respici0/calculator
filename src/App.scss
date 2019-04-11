@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
 
 $colors: (
-  background: #d2691e
+  background: #c0c0c0
 );
 
 @function colors($color-name) {
@@ -102,7 +102,7 @@ body {
 
 #clear {
   width: 379px;
-  background-color: grey;
+  background-color: lightgreen;
   &:active {
     @extend .active;
   }
