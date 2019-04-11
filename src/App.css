@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans");
+html,
 body {
+  height: 100vh;
   font-family: "PT Sans", sans-serif;
+  background: url("http://api.thumbr.it/whitenoise-361x370.png?background=#d2691eff&noise=626262&density=100&opacity=60");
 }
 
 .flex, #root {
@@ -55,6 +58,10 @@ body {
   text-align: center;
   -webkit-box-shadow: -1px 25px 24px 7px rgba(0, 0, 0, 0.57);
           box-shadow: -1px 25px 24px 7px rgba(0, 0, 0, 0.57);
+}
+
+.col {
+  margin-bottom: 15px;
 }
 
 #display {

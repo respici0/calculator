@@ -69,7 +69,7 @@ class App extends Component {
                   .
                 </button>
                 <button type="button" className="numberButton" id="equals">
-                  <i class="fas fa-equals" />
+                  =
                 </button>
               </div>
             </div>
