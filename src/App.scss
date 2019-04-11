@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans");
+
+@function colors($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: "PT Sans", sans-serif;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  @extend .flex;
+  height: 100vh;
+}
