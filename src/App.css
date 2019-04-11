@@ -119,4 +119,20 @@ body {
   width: 379px;
   background-color: lightgreen;
 }
+
+.footer {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.footer a {
+  color: orangered;
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: orangered;
+  font-size: 24px;
+}
 /*# sourceMappingURL=App.css.map */

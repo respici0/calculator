@@ -75,6 +75,14 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <div className="footer">
+          <p>
+            Created by{" "}
+            <a href="https://robertpaulrespicio.com/" target="_block">
+              Respici0
+            </a>
+          </p>
+        </div>
       </React.Fragment>
     );
   }

@@ -107,3 +107,18 @@ body {
     @extend .active;
   }
 }
+
+.footer {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+
+  a {
+    color: orangered;
+    &:hover {
+      text-decoration: none;
+      color: orangered;
+      font-size: 24px;
+    }
+  }
+}
