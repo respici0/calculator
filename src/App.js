@@ -101,7 +101,7 @@ class App extends Component {
       },
       () => console.log(this.state)
     );
-    if (equalsPressed === true && sum !== 0 && symbolPressed === true) {
+    if (equalsPressed === true && symbolPressed === true && sum !== 0) {
       this.setState({
         initialVal: sum,
         secondVal: 0,
@@ -151,13 +151,13 @@ class App extends Component {
         sum = parseInt(initialVal) + parseInt(secondVal);
         break;
       case "-":
-        sum = initialVal - secondVal;
+        sum = parseInt(initialVal) - parseInt(secondVal);
         break;
       case "*":
-        sum = initialVal * secondVal;
+        sum = parseInt(initialVal) * parseInt(secondVal);
         break;
       case "/":
-        sum = initialVal / secondVal;
+        sum = parseInt(initialVal) / parseInt(secondVal);
         break;
       default:
         break;
