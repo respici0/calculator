@@ -9,11 +9,46 @@ class App extends Component {
       secondVal: 0,
       currentVal: 0,
       sum: 0,
+      arrayOfNums: [],
       arithmeticVal: null,
       symbolPressed: false,
       equalsPressed: false
     };
   }
+
+  // what if i make an array and push all numbers into that array and then use reduce to get the sum
+
+  //
+  // onNumberChange = e => {
+  //   let value = e.target.value;
+  //   let { initialVal, arrayOfNums, symbolPressed } = this.state;
+  //   console.log(value);
+  //   if (symbolPressed === false) {
+  //     if (initialVal === 0 || initialVal === "00") {
+  //       this.setState({
+  //         initialVal: value
+  //       });
+  //     } else {
+  //       this.setState({
+  //         initialVal: (initialVal += value)
+  //       });
+  //       const array = [].push(initialVal);
+  //       this.setState({ arrayOfNums: array });
+  //     }
+  //     console.log(this.state);
+  //   } else if (symbolPressed === true) {
+  //     if (initialVal === 0 || initialVal === "00") {
+  //       this.setState({
+  //         initialVal: value
+  //       });
+  //     } else
+  //       this.setState({
+  //         initialVal: (initialVal += value)
+  //       });
+  //     const array = [].push(initialVal);
+  //     this.setState({ arrayOfNums: array });
+  //   }
+  // };
 
   onNumberChange = e => {
     let value = e.target.value;
@@ -144,9 +179,16 @@ class App extends Component {
               <div className="row">
                 <div className="container-fluid" id="display">
                   <div className="col">
-                    <div className="row justify-content-end">{sum}</div>
                     <div className="row justify-content-end">
-                      {initialVal} {arithmeticVal} {secondVal}
+                      <p>{sum ? sum : ""}</p>
+                    </div>
+                    <div className="row justify-content-end">
+                      {/* {sum ? sum : initialVal} */}
+                      <p>
+                        {initialVal ? initialVal : ""}{" "}
+                        {arithmeticVal ? arithmeticVal : ""}{" "}
+                        {secondVal ? secondVal : ""}
+                      </p>
                     </div>
                   </div>
                 </div>
