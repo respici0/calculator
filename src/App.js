@@ -9,51 +9,16 @@ class App extends Component {
       secondVal: 0,
       currentVal: 0,
       sum: 0,
-      arrayOfNums: [],
       arithmeticVal: null,
       symbolPressed: false,
       equalsPressed: false
     };
   }
 
-  // what if i make an array and push all numbers into that array and then use reduce to get the sum
-
-  //
-  // onNumberChange = e => {
-  //   let value = e.target.value;
-  //   let { initialVal, arrayOfNums, symbolPressed } = this.state;
-  //   console.log(value);
-  //   if (symbolPressed === false) {
-  //     if (initialVal === 0 || initialVal === "00") {
-  //       this.setState({
-  //         initialVal: value
-  //       });
-  //     } else {
-  //       this.setState({
-  //         initialVal: (initialVal += value)
-  //       });
-  //       const array = [].push(initialVal);
-  //       this.setState({ arrayOfNums: array });
-  //     }
-  //     console.log(this.state);
-  //   } else if (symbolPressed === true) {
-  //     if (initialVal === 0 || initialVal === "00") {
-  //       this.setState({
-  //         initialVal: value
-  //       });
-  //     } else
-  //       this.setState({
-  //         initialVal: (initialVal += value)
-  //       });
-  //     const array = [].push(initialVal);
-  //     this.setState({ arrayOfNums: array });
-  //   }
-  // };
-
   onNumberChange = e => {
     let value = e.target.value;
     let { initialVal, secondVal, symbolPressed } = this.state;
-
+    // let oneDecimal = /^(\d*\.)?\d+$/;
     if (symbolPressed === false) {
       console.log(value, "first number");
       if (initialVal === 0 || initialVal === "00") {
@@ -78,7 +43,9 @@ class App extends Component {
           {
             secondVal: (secondVal += value)
           },
-          () => console.log(this.state)
+          () => {
+            console.log(this.state);
+          }
         );
     }
   };
@@ -94,12 +61,15 @@ class App extends Component {
       arithmeticVal
     } = this.state;
     console.log(symbol, "symbol function pressed");
+
     this.setState(
       {
         arithmeticVal: symbol,
         symbolPressed: true
       },
-      () => console.log(this.state)
+      () => {
+        console.log(this.state);
+      }
     );
     if (equalsPressed === true && symbolPressed === true && sum !== 0) {
       this.setState({
@@ -125,6 +95,58 @@ class App extends Component {
           break;
       }
       this.setState({ sum });
+      // } else if (equalsPressed === false && symbolPressed === true && sum == 0) {
+      //   let { initialVal, secondVal, arithmeticVal, sum } = this.state;
+      //   console.log("symbol pressed", this.state);
+
+      //   switch (arithmeticVal) {
+      //     case "+":
+      //       sum = parseInt(initialVal) + parseInt(secondVal);
+      //       break;
+      //     case "-":
+      //       sum = parseInt(initialVal) - parseInt(secondVal);
+      //       break;
+      //     case "*":
+      //       sum = parseInt(initialVal) * parseInt(secondVal);
+      //       break;
+      //     case "/":
+      //       sum = parseInt(initialVal) / parseInt(secondVal);
+      //       break;
+      //     default:
+      //       break;
+      //   }
+      //   this.setState({
+      //     sum,
+      //     equalsPressed: false,
+      //     initialVal: sum,
+      //     secondVal: 0
+      //   });
+      // } else if (equalsPressed === false && symbolPressed === true && sum !== 0) {
+      //   let { initialVal, secondVal, arithmeticVal, sum } = this.state;
+      //   console.log("symbol pressed", this.state);
+
+      //   switch (arithmeticVal) {
+      //     case "+":
+      //       sum = parseInt(initialVal) + parseInt(secondVal);
+      //       break;
+      //     case "-":
+      //       sum = parseInt(initialVal) - parseInt(secondVal);
+      //       break;
+      //     case "*":
+      //       sum = parseInt(initialVal) * parseInt(secondVal);
+      //       break;
+      //     case "/":
+      //       sum = parseInt(initialVal) / parseInt(secondVal);
+      //       break;
+      //     default:
+      //       break;
+      //   }
+      //   this.setState({
+      //     sum,
+      //     equalsPressed: false,
+      //     initialVal: sum,
+      //     secondVal: 0
+      //   });
     }
   };
 
@@ -185,7 +207,7 @@ class App extends Component {
                     <div className="row justify-content-end">
                       {/* {sum ? sum : initialVal} */}
                       <p>
-                        {initialVal ? initialVal : ""}{" "}
+                        {initialVal ? initialVal : "0"}{" "}
                         {arithmeticVal ? arithmeticVal : ""}{" "}
                         {secondVal ? secondVal : ""}
                       </p>
