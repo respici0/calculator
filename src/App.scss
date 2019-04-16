@@ -128,3 +128,9 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 650px) {
+  #root {
+    transform: scale(0.6);
+  }
+}
